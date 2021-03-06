@@ -17,28 +17,8 @@ function printTimes(object) {
         let divId = "div" + i;
         let divHolder = document.getElementById(divId);
 
-        let infoDestination = 'Destination: ' + object[i].destination_name;
-        let infoOperator = 'Operator: ' + object[i].operator_name;
-        let infoArrival = 'Arrival time: ' + object[i].expected_arrival_time;
-        let infoStatus = 'Status: ' + object[i].status;
+        let trainInfo = object[i].expected_arrival_time + "      " + object[i].destination_name + "      " + object[i].operator_name + "        " + object[i].status;
 
-        for (let i = 0; i < 4; i++) {
-
-            let pID = divId + "-p" + i;
-            var newpElem = '<p id="' + pID + '"></p>';
-            divHolder.insertAdjacentHTML('beforeend', newpElem);
-        }
-
-        let pID0 = divId + "-p" + 0;
-        let pID1 = divId + "-p" + 1;
-        let pID2 = divId + "-p" + 2;
-        let pID3 = divId + "-p" + 3;
-
-        document.getElementById(pID0).innerHTML = infoDestination;
-        document.getElementById(pID1).innerHTML = infoOperator;
-        document.getElementById(pID2).innerHTML = infoArrival;
-        document.getElementById(pID3).innerHTML = infoStatus;
-
-
+        divHolder.innerHTML = trainInfo;
     }
 }

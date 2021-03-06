@@ -1,4 +1,40 @@
 #holder {
     font-size: 30px;
-    text-align: center;
+    text-align: left;
+    color: rgb(250, 125, 9);
+    overflow: hidden;
+    white-space: nowrap;
+    float: left;
+}
+
+body {
+    background-color: black;
+}
+
+div {
+    margin-top: 50px;
+}
+
+#time {
+    color: white;
+    font-size: 30px;
+    float: left;
+}
+#operator {
+    color: white;
+    font-size: 30px;
+    float: left;
+    margin-left: 100px;
+}
+#destination {
+    color: white;
+    font-size: 30px;
+    float: left;
+    margin-left: 100px;
+}
+#status {
+    color: white;
+    font-size: 30px;
+    float: left;
+    margin-left: 100px;
 }
