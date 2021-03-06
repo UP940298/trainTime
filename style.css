@@ -41,3 +41,20 @@ body {
     margin-left: 50%;
     height: auto;
 }
+
+@media all and (max-width: 1125px) {
+    #title h3{
+        font-size: 30px;
+    }
+
+    #title p {
+        font-size: 25px;
+    }
+
+    #trainOp {
+        margin-left: 30%;
+    }
+    #trainSta {
+        margin-left: 65%;
+    }
+}
