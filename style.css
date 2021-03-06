@@ -1,40 +1,43 @@
-#holder {
-    font-size: 30px;
-    text-align: left;
-    color: rgb(250, 125, 9);
-    overflow: hidden;
-    white-space: nowrap;
-    float: left;
-}
-
 body {
     background-color: black;
 }
 
-div {
-    margin-top: 50px;
+#title h3{
+    font-family: 'DotGothic16', sans-serif;
+    color: white;
+    font-size: 40px;
+    margin-top: 0%;
+}
+#title p {
+    font-family: 'DotGothic16', sans-serif;
+    color: rgb(250, 125, 9);
+    font-size: 35px;
 }
 
-#time {
-    color: white;
-    font-size: 30px;
-    float: left;
+#trainTime {
+    display: inline-block;
+    width: 100px;
+    height: auto;
 }
-#operator {
-    color: white;
-    font-size: 30px;
-    float: left;
-    margin-left: 100px;
+
+#trainDest {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    margin-left: 2%;
+    height: auto;
 }
-#destination {
-    color: white;
-    font-size: 30px;
-    float: left;
-    margin-left: 100px;
+#trainOp {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    margin-left: 25%;
+    height: auto;
 }
-#status {
-    color: white;
-    font-size: 30px;
-    float: left;
-    margin-left: 100px;
+#trainSta {
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    margin-left: 50%;
+    height: auto;
 }
