@@ -1,0 +1,40 @@
+<html>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+<head>
+    <div>
+        <label for="departStation" id="name">Departing from: </label>
+        <input type="search" id="departStation">
+    </div>
+    <div>
+        <label for="callingStation" id="name">Calling at: </label>
+        <input type="search" id="callingStation">
+    </div>
+    <div>
+        <input type="submit" id="submit" value="Choo choo." onclick="setData();">
+    </div>
+
+</head>
+<script src="stationCode.js"></script>
+<script>
+    function setData() {
+        localStorage.removeItem('depart');
+        localStorage.removeItem('calling');
+
+        let depart = document.querySelector('#departStation').value;
+        let calling = document.querySelector('#callingStation').value;
+
+
+        if (codes[depart] === undefined || codes[calling] === undefined) {
+            alert("Incorrect station name, please enter another");
+        } else {
+            localStorage.setItem('depart', codes[depart]);
+            localStorage.setItem('calling', codes[calling]);
+            document.location.href = "index.html";
+        }
+    }
+</script>
+
+</html>
