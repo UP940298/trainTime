@@ -1,14 +1,23 @@
-const Url = "https://transportapi.com/v3/uk/train/station/SLO/live.json?app_id=7c6801c2&app_key=7cc056e995f72408c51d026d654e51b4&calling_at=HAY&darwin=false&to_offset=PT12:00:00&train_status=passenger";
 var timesObject;
+function createURL() {
+    let depart = localStorage.getItem('depart');
+    let calling = localStorage.getItem('calling');
+    const address = "https://transportapi.com/v3/uk/train/station/" + depart + "/live.json?app_id=7c6801c2&app_key=7cc056e995f72408c51d026d654e51b4&calling_at=" + calling + "&darwin=false&to_offset=PT12:00:00&train_status=passenger";
+    fetchURL(address);
+}
+
+function fetchURL(address) {
+    fetch(address)
+        .then(response => response.json())
+        .then(data => timesObject = data.departures.all)
+        .then(() => sortData(timesObject))
+}
+
 const timeDiv = document.querySelector('#trainTime');
 const destDiv = document.querySelector('#trainDest');
 const opDiv = document.querySelector('#trainOp');
 const staDiv = document.querySelector('#trainSta');
 
-fetch(Url)
-    .then(response => response.json())
-    .then(data => timesObject = data.departures.all)
-    .then(() => sortData(timesObject))
 
 function sortData(object) {
     let trainTime = [];
@@ -65,3 +74,6 @@ function printSta(staArr) {
         staP.innerHTML = staArr[i].toLowerCase();
     }
 }
+
+
+createURL();
